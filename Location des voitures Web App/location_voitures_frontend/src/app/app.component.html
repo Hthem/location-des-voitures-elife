@@ -1,0 +1,60 @@
+<nav class="navbar custom-navbar navbar-expand-lg navbar-light" *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn" >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/login">Car Rental Service</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <nav class="navbar custom-navbar navbar-expand-lg navbar-light" *ngIf="isAdminLoggedIn">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/login">LoggedIn Admin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+            <a class="nav-link" routerLink="/admin/car" routerLinkActive="active">Post Car</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()"  routerLinkActive="active">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <nav class="navbar custom-navbar navbar-expand-lg navbar-light" *ngIf="isCustomerLoggedIn">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/login">LoggedIn Customer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-links">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLinkActive="active">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<router-outlet></router-outlet>

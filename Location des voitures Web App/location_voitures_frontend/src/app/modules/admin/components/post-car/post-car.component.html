@@ -1,0 +1,61 @@
+<div style="margin-top: 50px">
+    <div *ngIf="isSpinning" class="spinner-border text-primary" role="status">
+      <span class="sr-only">Working...</span>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="row imgDiv">
+          <h2 style="margin-left: 230px">Post Car</h2>
+        </div>
+        <form [formGroup]="postCarForm">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="profile-badge">
+                <label for="upload_profile_image" class="upload-label" *ngIf="selectedFile">
+                  <img class="profile" [src]="imagePreview" alt="profile" />
+                </label>
+                <input type="file" class="btn btn-primary" id="upload_profile_image" accept="image/x-png, image/gif, image/jpeg" (change)="onFileSelected($event)" />
+                <button class="btn btn-primary btn-circle"></button>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group">
+                <select class="form-control" formControlName="brand" required>
+                  <option *ngFor="let brand of listOfBrands" [value]="brand">{{ brand }}</option>
+                </select>
+                <div class="invalid-feedback">This Input Is Required!</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="name" placeholder="Name" required />
+                <div class="invalid-feedback">This Input Is Required!</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <select class="form-control" formControlName="type" required>
+                  <option *ngFor="let type of listOfType" [value]="type">{{ type }}</option>
+                </select>
+                <div class="invalid-feedback">This Input Is Required!</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="price" placeholder="Price" required />
+                <div class="invalid-feedback">This Input Is Required!</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <textarea rows="1" class="form-control" formControlName="description" placeholder="Description" required></textarea>
+                <div class="invalid-feedback">This Input Is Required!</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary login-form-button login-form-margin" [disabled]="postCarForm.invalid" (click)="postCar()">Post Car</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

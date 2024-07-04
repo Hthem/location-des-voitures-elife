@@ -1,0 +1,47 @@
+<div class="bg" style="background-color: #F8F8F8;">
+    <!-- Spinner -->
+    <div class="spinner-border" role="status" *ngIf="isSpinning">
+      <span class="sr-only">Loading...</span>
+    </div>
+  
+    <div class="parent">
+      <div class="child">
+        <div class="row imgDiv">
+          <div class="col">
+            <h1 style="margin-left: 100px;">Login</h1>
+          </div>
+        </div>
+  
+        <!-- Login Form -->
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="bi bi-person"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Email" formControlName="email">
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="bi bi-lock"></i>
+                </span>
+              </div>
+              <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block login-form-button login-form-margin" (click)="login()" [disabled]="loginForm.invalid">Log in</button>
+            <small><a routerLink="/register"  >Register now!</a></small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

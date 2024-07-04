@@ -1,0 +1,70 @@
+/* Container for the form */
+.custom-form-container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Phone select styling */
+  .phone-select {
+    width: 70px;
+  }
+  
+  /* Register area margin */
+  .register-area {
+    margin-bottom: 8px;
+  }
+  
+  /* Form child container */
+  .form-child {
+    padding: 50px;
+    position: absolute;
+    width: 380px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 15px -7px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 22px;
+  }
+  
+  /* Form control minimum width */
+  .custom-form-control {
+    min-width: 280px;
+  }
+  
+  /* Parent container */
+  .parent-container {
+    width: 100%;
+    height: 91vh;
+    position: relative;
+  }
+  
+  /* Form item margin */
+  .form-item-margin {
+    margin-bottom: 16px;
+  }
+  
+  /* Forgot password link alignment */
+  .form-forgot {
+    float: right;
+  }
+  
+  /* Form button full width */
+  .form-button {
+    width: 100%;
+  }
+  
+  button {
+    background-color: #001529;
+    border: none;
+    color: white;
+  }
+  
+  /* Image container */
+  .img-container {
+    width: 100%;
+    vertical-align: middle;
+    margin-bottom: 40px;
+  }
+  
